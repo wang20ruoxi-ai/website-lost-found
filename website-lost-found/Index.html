@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Informasi Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔍 Lost & Found Center</h1>
+        <p>Sistem Informasi Barang Hilang dan Ditemukan</p>
+    </header>
+
+    <main class="container">
+        <!-- Form Tambah Laporan -->
+        <section class="form-section">
+            <h2>Buat Laporan Baru</h2>
+            <form id="itemForm">
+                <div class="form-group">
+                    <label>Jenis Laporan:</label>
+                    <select id="status" required>
+                        <option value="Hilang">Barang Hilang (Lost)</option>
+                        <option value="Ditemukan">Barang Ditemukan (Found)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Barang:</label>
+                    <input type="text" id="itemName" placeholder="Contoh: Dompet Kulit Hitam / Kunci Motor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Lokasi Kejadian:</label>
+                    <input type="text" id="location" placeholder="Contoh: Kantin Lantai 1 / Ruang Lab" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tanggal:</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Kontak Pelapor (WhatsApp / No. HP):</label>
+                    <input type="text" id="contact" placeholder="Contoh: 08123456789 (Budi)" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Ciri-ciri / Keterangan Tambahan:</label>
+                    <textarea id="description" rows="3" placeholder="Jelaskan ciri spesifik barang..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Publikasikan Laporan</button>
+            </form>
+        </section>
+
+        <!-- Daftar Barang -->
+        <section class="list-section">
+            <div class="filter-bar">
+                <input type="text" id="searchInput" placeholder="Cari nama barang atau lokasi...">
+                <select id="filterStatus">
+                    <option value="Semua">Semua Status</option>
+                    <option value="Hilang">Barang Hilang</option>
+                    <option value="Ditemukan">Barang Ditemukan</option>
+                </select>
+            </div>
+
+            <div id="itemList" class="item-grid">
+                <!-- Data barang akan muncul otomatis di sini lewat JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
